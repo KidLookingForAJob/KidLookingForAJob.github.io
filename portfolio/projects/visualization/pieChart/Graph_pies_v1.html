@@ -1,0 +1,175 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<p>Select a pie chart to see.</p>
+        <select id="mySelect" onchange="myFunction()">
+            <option value="Race">Race
+            <option value="Gender">Gender
+            <option value="Previous Crime">Previous Crime
+        </select>
+<div id="pieChart"></div>
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="d3pie.min.js"></script>
+<script>
+function myFunction(){
+    var x = document.getElementById("mySelect").value;
+    
+    //gender data, title
+    var titleGender = "Gender of Executions in Texas";
+    var dataGender = [
+
+    { "label": "Male", "value": 539, "color": "#3de1dd"},
+
+    { "label": "Female", "value": 6, "color": "#FFB6C1"}
+
+    ];
+    var subtitleGender = "A full pie chart to show gender makeup of executions in the state of Texas.";
+    
+    //previous crime data, title
+    var titlePC = "Previous vs Non Previous Crimes of People Executed in Texas";
+    var dataPC = [
+
+    { "label": "Have Previous Crime", "value": 276, "color": "#09046c"},
+
+    { "label": "Have Not Had Previous Crime", "value": 269, "color": "#a44217"}
+
+    ];
+    var subtitlePC = "A full pie chart to show how many of the 545 executions did offenders commit previous crimes";
+    
+    //race data, title
+    var titleRace = "Race of Executions in Texas";
+    var dataRace = [
+
+    { "label": "Black", "value": 198, "color": "#09046c"},
+
+    { "label": "Hispanic", "value": 103, "color": "#a44217"},
+    
+    { "label": "White", "value": 242, "color": "#569ce6"},
+    
+    { "label": "Other", "value": 2, "color": "#39FF14"}
+
+    ];
+    var subtitleRace = "A full pie chart to show race makeup of executions in the state of Texas.";
+    
+    if (x=="Gender"){
+        pie.updateProp("header.title.text", titleGender);
+        pie.updateProp("header.subtitle.text", subtitleGender);
+        pie.updateProp("data.content", dataGender);
+    }
+    else if(x=="Previous Crime"){
+        
+        pie.updateProp("header.title.text", titlePC);
+        pie.updateProp("header.subtitle.text", subtitlePC);
+        pie.updateProp("data.content", dataPC);
+        
+    }
+    else{
+        pie.updateProp("header.title.text", titleRace);
+        pie.updateProp("header.subtitle.text", subtitleRace);
+        pie.updateProp("data.content", dataRace);
+    }
+}
+
+    
+
+    var pie = new d3pie("pieChart", {
+        "header": {
+            "title": {
+                "text": "Race of Executions in Texas",
+                "fontSize": 24,
+                "font": "open sans"
+            },
+            "subtitle": {
+                "text": "A full pie chart to show race makeup of executions in the state of Texas.",
+                "color": "#999999",
+                "fontSize": 12,
+                "font": "open sans"
+            },
+            "titleSubtitlePadding": 9
+        },
+        "footer": {
+            "color": "#999999",
+            "fontSize": 10,
+            "font": "open sans",
+            "location": "bottom-left"
+        },
+        "size": {
+            "canvasWidth": 900,
+            "pieOuterRadius": "90%"
+        },
+        "data": {
+            "sortOrder": "value-desc",
+            "content": [
+                {
+                    "label": "Black",
+                    "value": 198,
+                    "color": "#09046c"
+                },
+                {
+                    "label": "Hispanic",
+                    "value": 103,
+                    "color": "#a44217"
+                },
+                {
+                    "label": "White",
+                    "value": 242,
+                    "color": "#569ce6"
+                },
+                {
+                    "label": "Other",
+                    "value": 2,
+                    "color": "#39FF14"
+                }
+            ]
+        },
+        "labels": {
+            "outer": {
+                "pieDistance": 32
+            },
+            "inner": {
+                "hideWhenLessThanPercentage": 3
+            },
+            "mainLabel": {
+                "fontSize": 11
+            },
+            "percentage": {
+                "color": "#ffffff",
+                "decimalPlaces": 0
+            },
+            "value": {
+                "color": "#adadad",
+                "fontSize": 11
+            },
+            "lines": {
+                "enabled": true
+            },
+            "truncation": {
+                "enabled": true
+            }
+        },
+        "tooltips": {
+            "enabled": true,
+            "type": "placeholder",
+            "string": "{label}: {value}, {percentage}%"
+        },
+        "effects": {
+            "pullOutSegmentOnClick": {
+                "effect": "linear",
+                "speed": 400,
+                "size": 8
+            }
+        },
+        "misc": {
+            "gradient": {
+                "enabled": true,
+                "percentage": 100
+            }
+        }
+    });
+   
+</script>
+
+</body>
+</html>

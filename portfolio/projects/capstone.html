@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facilities Management Capstone</title>
+<meta name="description" content="Facilities Management Capstone Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link rel="icon" 
+      type="image/png" 
+      href="../favicon.png">
+</head>
+
+<body>
+<nav class="navbar">
+        <span id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="../index.html" id="logo" class=handwriting>jeremy</a>
+        <ul id="main-nav">
+            <li>
+                <a href="../index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">About</a>
+            </li>
+            <li>
+                <a href="../index.html#work" class="nav-links">Recent Work</a>
+            </li>
+            <li>
+                <a href="../index.html#hobbies" class="nav-links">Hobbies</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">Contact</a>
+            </li>
+        </ul>
+</nav>
+
+
+<div class = "contentboxProjects" id=>
+   <em><h2 style="text-align:center;">Facilities Management Capstone</h2></em>
+    </br>
+    <h2>Origin:</h2>
+        <p>Final Capstone Project consisting of 4 senior team members and a graduate student at University of Arkansas at Little Rock.</p>
+    <h2>Purpose:</h2>
+        <p>To move 20 years worth of billing records at Facilities Management from an excel to a relational database. Also provide forms for easier entry for their accountant.</p>
+    <h2>Project Length:</h2>
+        <p>1 Year</p>
+    <h2>Languages/Software Used:</h2>    
+        <p>Javascript, HTML, CSS, ASP.NET, SQL</p>
+    <h2>View:</h2>
+        <p>We created 3 similar forms for entering gas, water, and electric. We made sure forms were either set to take date, numbers, or drop downs to prevent SQL Injection. Even though only one person is using the system, their accountant, we made sure that you can't type char characters. Below Account ID is a drop down which pulls currently available accounts from the SQL Server Database. Same goes for Meter ID.</p>
+        <p><img src="entry.PNG"></p>
+            
+        <p>Below each form were tables that showed what was previously entered</p><p><img src="table.PNG"></p>
+        When the accountant clicks submit, the data is entered to a pre_billing table which has a stored procedure batch procedure that runs every night to insert data to the main database. The accountant can insert data for the account multiple times if he/she messes up, but the stored procedure will only insert the latest/current one for that day.</p>
+        </br>
+        <p>For more information on this project email me at <a href="mailto:jeremykn222@gmail.com">jeremykn222@gmail.com</a></p>
+        
+</div>
+
+
+<footer class="bgimg-5">
+    @2018 Jeremy K.N.
+</footer>
+
+<script src="../navbar.js"></script>
+</body>
+</html>

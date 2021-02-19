@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Visualization of Texas Death Row Executions</title>
+<meta name="description" content="Visualization of Texas Death Row Executions">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link rel="icon" 
+      type="image/png" 
+      href="../favicon.png">
+</head>
+
+<body>
+<nav class="navbar">
+        <span id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="../index.html" id="logo" class=handwriting>jeremy</a>
+        <ul id="main-nav">
+            <li>
+                <a href="../index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">About</a>
+            </li>
+            <li>
+                <a href="../index.html#work" class="nav-links">Recent Work</a>
+            </li>
+            <li>
+                <a href="../index.html#hobbies" class="nav-links">Hobbies</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">Contact</a>
+            </li>
+        </ul>
+</nav>
+
+
+<div class = "contentboxProjects" id=>
+   <em><h2 style="text-align:center;">Visualization of Texas Death Row Executions</h2></em>
+    </br>
+    <h2>Origin:</h2>
+        <p>Data Visualization Graduate Course Project where we had to select a dataset and use or build visualization software to display interesting things about the data. Selected dataset was Texas Executions from <a href="https://www.kaggle.com/ianmobbs/texas-death-row-executions-info-and-last-words">Kaggle.com</a></p>
+    <h2>Purpose:</h2>
+        <p>Visualize:</p>
+        <p>-main counties of convictions for Texas Counties</p>
+        <p>-most frequent words in a executioned person's last statement</p>
+        <p>-crime history and gender of executioned people</p>
+    <h2>Project Length:</h2>
+        <p>3 Months</p>
+    <h2>Languages/Software Used:</h2>    
+        <p>Javascript, D3.js Library</p>
+    <h2>View:</h2>
+        <p><a href ="visualization/choropleth/texas_chorpleth.html">Texas County Execution Conviction Counties</a><--wait 15 seconds for map to load</p>
+        <p><a href ="visualization/pieChart/Graph_pies_v1.html">Last Statements Frequent Words</a></p>
+        <p><a href ="visualization/wordCloud/word_cloud_example2.html">Gender/Previous Crimes Pie Graph</a></p>
+        <p>The d3.js libary mainly involed drawing the svg object, opening data files, looping through the file, extracting the data, and putting into the svg to draw a county map, or word cloud. The main problem with
+        d3.js is that it uses a lot of ram drawing svg's, so working with big data is not advisable. I suggest aggregating the data first or your browser will crash.</p>
+        </br>
+        <p>For more information on this project email me at <a href="mailto:jeremykn222@gmail.com">jeremykn222@gmail.com</a></p>
+</div>
+
+
+<footer class="bgimg-5">
+    @2018 Jeremy K.N.
+</footer>
+
+<script src="../navbar.js"></script>
+</body>
+</html>

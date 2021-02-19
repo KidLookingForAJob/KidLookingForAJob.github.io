@@ -1,0 +1,598 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.handwriting{
+    font-size: 50px; 
+    font-family: 'Rock Salt', cursive;
+}
+.bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    
+.bgimg-1{
+    position: relative;
+    opacity: 0.75;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;     
+}
+.bgimg-1 {
+    background-image: url("img_parallax.jpg");
+    min-height: 100%;
+}
+
+.bgimg-2 {
+    background-image: url("img_parallax2.jpg");
+    min-height: 250px;
+    opacity: 0.70;
+}
+
+.bgimg-3 {
+    background-image: url("img_parallax4.jpg");
+    min-height: 250px;
+  
+}
+
+.bgimg-5{
+    background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%); 
+    color: white;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.caption2 {
+    position: absolute;
+    left: 0;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    background-color: #27303d;
+    color: #fff;
+    padding: 18px;
+    font-size: 75px;
+    letter-spacing: 10px;
+}
+.caption span.border2 {
+    background-color: gray;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+    
+.caption span.sectionheaderText{
+    background-color:transparent;
+    font-size:55px;
+    color: #f7f7f7;
+    letter-spacing: 10px;
+}
+
+
+
+
+h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 30px "Lato", sans-serif;
+    color: #111;
+}
+
+.contentbox1{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    font-size: 20px; 
+    font: "Lato", sans-serif;
+}
+.contentboxProjects{
+    color: #777;
+    background-color:white;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+    font-size: 20px; 
+    font-family: "Lato", sans-serif;
+}   
+    
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*fraction*/
+    padding: 10px;
+}
+.containerHobbies {
+    display: grid;
+    grid-template-columns: 1fr 1fr ; /*fraction*/
+    padding: 10px;
+}
+
+.section {
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 20px 20px 20px 20px;
+
+    border: 3px solid #2376ae;
+    height: 182.73;
+    width: 90%;
+    height: 300px;
+    background-color:white;
+    border-radius: 30px; 
+}  
+    
+.section_blank{
+    text-align:center;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 182.73;
+    width: 260px;
+    height: 160px
+    margin: 0 auto;
+
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    filter: grayscale(100%);
+}
+
+#aws_proj{
+    background-image: url(projects/aws_badge.png);
+    background-size:     60% auto;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    color: black;
+    transition: all .3s ease-in-out;
+}
+
+#aws_proj:hover{
+  background-size: 40%;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+
+#capstone_proj{
+    background-image: url(utilities.PNG);
+    background-size:     50% auto;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position:  50% 0%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#capstone_proj:hover{
+  background-size: 40%;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+
+#nba_proj{
+    background-image: url(nba_er.JPG);
+    background-size:     70% auto;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position:  50% 0%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#nba_proj:hover{
+  background-size: 50%;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+
+#d3_proj{
+    background-image: url(d3_bg.PNG);
+    background-size:     150% auto;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;   
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#d3_proj:hover{
+    background-size: 110%;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+#invoice_proj{
+    background-image: url(pyhthon.JPG);
+    background-size:     80% auto;                     /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;   
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#invoice_proj:hover{
+    background-size: 65%;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+#bootstrap_proj{
+    background-image: url(jland.JPG);
+    background-size:     120% auto;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position:  50% 0%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#bootstrap_proj:hover{
+  background-size: 100%;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+
+#model_proj{
+    background-image: url(leona.png);
+    background-size:     115% auto;                     /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;   
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    
+}
+#model_proj:hover{
+    background-size: 100%;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+#pc_proj{
+    background-image: url(projects/pc.jpg);
+    background-size:     120% auto;                     /* <------ */
+    background-repeat:   no-repeat;
+    background-position: 30% 30%;   
+    cursor: pointer;  
+    transition: all .3s ease-in-out;
+}
+#pc_proj:hover{
+    background-size: 100%;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+hobbies{
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 182.73;
+    width: 100%;
+    height: 180px;
+    background-color:white;    
+}   
+
+.contentDiv{
+    background-color: #27303d;
+    text-align:center;
+    padding:50px 80px;
+    text-align: justify;
+}
+
+.frontSectionText{
+    background-color: #27303d;
+    opacity: .8;
+    color: white;
+    border-radius: 25px;         
+} 
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  font-size: 18px;
+  background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+}
+
+#main-nav {
+  list-style-type: none;
+  display: none;
+  flex-direction: column;
+}
+
+#main-nav li {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.nav-links,
+#logo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#logo:hover,
+.nav-links:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+#logo {
+  display: inline-block;
+  font-size: 22px "Times New Roman", Times, serif;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+
+#navbar-toggle:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.sectionLinks{
+    text-decoration: none;
+    text-align: center;
+}  
+    
+    
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+    
+    #main-nav {
+        display: flex !important;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    #main-nav li {
+        margin: 0;
+    }
+    
+    .nav-links {
+        margin-left: 40px;
+    }
+    
+    #logo {
+        margin-top: 0;
+    }
+    
+    #navbar-toggle {
+        display: none;
+    }
+  
+}
+
+    
+@media (max-width: 768px) { /*breakpoint*/
+    .bgimg-1 {
+        background-image: url("img_parallax_min.jpg");
+    }
+    .bgimg-2 {
+        background-image: url("img_parallax2_min.png");
+    }
+    .bgimg-3 {
+        background-image: url("img_parallax4_min.jpg");
+    }
+    #aws_proj{
+        background-image: url(projects/aws_badge.png);
+    }
+    #d3_proj{
+        background-image: url(d3_bg_min.png);
+    }
+    #model_proj{
+        background-image: url(leona_min.png);
+    }
+    #pc_proj{
+        background-image: url(projects/pc_min.jpg);
+    }
+    h3 {
+        font: 20px "Lato", sans-serif;
+    }
+    .handwriting{
+        font-size: 24px; 
+    }
+    .container {
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
+    }
+    
+    .section{
+        margin: 5px auto;
+        border: 3px solid #2376ae;
+        width: 240px;
+        height: 200px;
+    }
+    
+    .section h1{
+        font-size: 10px;
+    }
+    
+    .section p{
+        font-size: 8px;
+    }
+    
+    .section_blank{
+        border: 3px solid black;
+        width: 130px;
+        height: 50px;
+    }
+    
+    #aws_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #capstone_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #nba_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #d3_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #invoice_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #bootstrap_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    #model_proj{
+        background-size:     cover;                      /* <------ */
+        background-position: center center;  
+    }
+    
+    .caption {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+    
+    .caption2 {
+        position: absolute;
+        left: 0;
+        top: 20%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+    
+    
+    body{
+        background-size:     cover;                      
+        background-repeat:   no-repeat;
+        background-position: center center; 
+    }
+    
+    p{
+        font-size: 14px;
+    }
+    
+    .contentDiv{
+        padding: 5px 5px;
+    }
+    
+    .caption span.sectionheaderText{
+        font-size:30px;
+    }
+    
+    .bgimg-2 {
+        min-height:140px;
+    }
+    
+    .bgimg-3 {
+        min-height:140px;
+    }
+    .contentboxProjects{
+        font-size: 15px;
+        font-family: "Lato", sans-serif;     
+    }
+    .caption span.border {
+        font-size: 45px;
+
+    }
+    .caption span.border2 {
+        font-size: 25px;
+
+    }
+      
+}
+ 
+   
+    
+     
+    
+    
+    
+@media only screen and (max-device-width: 420px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .caption span.border {
+        font-size: 20px;
+        letter-spacing: 10px;
+    }
+    .caption span.border2 {
+        font-size: 14px;
+        letter-spacing: 10px;
+    }
+    .contentbox1{
+        padding: 20px 20px;     
+    }
+    .contentboxProjects{
+        padding: 20px 20px;     
+    }
+    
+}
+
+
+    
+@media only screen and (max-device-width: 320px) {
+    .caption span.border {
+        font-size:15px;
+        letter-spacing: 10px;
+    }
+    .caption span.border2 {
+        font-size: 10px;
+        letter-spacing: 10px;
+    }
+    .caption span.sectionheaderText{
+        font-size:30px;
+        letter-spacing: 3px;
+    }
+    .section{
+        margin: 5px auto;
+        border: 3px solid black;
+        width: 180px;
+        height: 130px;
+    }
+}
+

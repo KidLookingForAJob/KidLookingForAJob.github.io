@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>NBA Relational Database</title>
+<meta name="description" content="Relational Database">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link rel="icon" 
+      type="image/png" 
+      href="../favicon.png">
+</head>
+
+<body>
+<nav class="navbar">
+        <span id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="../index.html" id="logo" class=handwriting>jeremy</a>
+        <ul id="main-nav">
+            <li>
+                <a href="../index.html" class="nav-links">Home</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">About</a>
+            </li>
+            <li>
+                <a href="../index.html#work" class="nav-links">Recent Work</a>
+            </li>
+            <li>
+                <a href="../index.html#hobbies" class="nav-links">Hobbies</a>
+            </li>
+            <li>
+                <a href="../index.html#about" class="nav-links">Contact</a>
+            </li>
+        </ul>
+</nav>
+
+
+<div class = "contentboxProjects" id=>
+   <em><h2 style="text-align:center;">NBA Relational Database</h2></em>
+    </br>
+    <h2>Origin:</h2>
+        <p>Database II Class Project</p>
+    <h2>Purpose:</h2>
+        <p>I wanted to build a National Basketball Association(NBA) database that has a roster for the teams, their division, their home stadiums, head coach, and stats of players in each game.</p>
+    <h2>Project Length:</h2>
+        <p>6 months</p>
+    <h2>Languages/Software Used:</h2>    
+        <p>SQL, SQL Developer</p>
+    <h2>View:</h2>
+        <p>I had to create a relational database from scratch. I first picked real world entities, identify their relationships, asssumptions and explain those assumptions.</p>
+        <p>Then had to model the database in a ER Diagram</p>
+        <p>Then I had to normalize the schemas to 3NF</p>
+        <p>Then I created the tables using SQL and inserting data manually into the database</p>
+        </br>
+        <p><b>ER Diagram</b></p>
+        <p><img src="nba_er.JPG"></p>
+        <p>From the diagram above the real world entities were HEAD_COACH, DIVISION, PLAYER, TEAM, and HOME_STADIUM. The relationships are Coaches, Affiliated, HAS, Players_for, and Plays. Primary Keys are underlined and relationship numbers are stated in parenthesis.</p>
+        </br>
+        <p><b>3NF Schema</b></p>
+        <p><img src="schema.JPG"></p>
+        <p>Above shows the schema and what was added and expanded to normalize the database to 3NF. It is similar to the ER Diagram, but with some added entities to remove functional dependecies.</p>
+        </br>
+        <p><b>Example Query</b></p>
+        <p><img src="query.JPG"></p>
+     
+        </br>
+        <p>The SQL Code was over 10 pages in a word document of my report. It is too long to post on here. If you want to know more about the project or code email me at <a href="mailto:jeremykn222@gmail.com">jeremykn222@gmail.com</a></p>
+</div>
+
+
+<footer class="bgimg-5">
+    @2018 Jeremy K.N. 
+</footer>
+
+<script src="../navbar.js"></script>
+</body>
+</html>

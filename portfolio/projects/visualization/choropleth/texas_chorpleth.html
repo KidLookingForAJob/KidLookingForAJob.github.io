@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head><meta charset="utf-8"/></head>
+<style>
+
+    .county{
+        fill: white;
+    }
+svg{
+    background: grey;
+    stroke: #cccccc;
+    border: black;
+    }
+.legendCells{
+    
+    stroke: black;   
+    }
+
+div.tooltip { 
+          position: absolute;     
+          text-align: center;     
+          width: 80px;          
+          height: 14px;         
+          padding: 2px;       
+          font: 12px sans-serif;    
+          background: #fff; 
+          border: 0px;        
+          pointer-events: none;     
+      }
+
+
+
+</style>
+
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
+
+<body>
+<div id ="map"></div>
+
+</body>
+</html>
+<script>
+
+var margin = {top: 50, left: 50, right: 50, bottom: 50},
+    height = 400 - margin.top - margin.bottom,
+    width = 800 - margin.left - margin.right;
+
+var tooltip = d3.select("body").append("div") 
+        .attr("class", "tooltip")       
+        .style("opacity", 0);
+    
+var svg = d3.select("#map")
+    .append("svg")
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + margin.left + margin.right)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.queue()
+    .defer(d3.json,"Texas_County_Boundaries_Detailed.json")
+    .defer(d3.csv, "location.csv") // Load location csv
+    .await(ready)
+
+
+var projection = d3.geoAlbers()
+    .translate([width/2, height/2])
+    .scale(2000)
+    .center([-3, 31.33])
+    
+    
+
+var path = d3.geoPath()
+    .projection(projection)
+    
+var color = d3.scaleThreshold()
+    .domain([0, 5, 10 , 40, 100])
+    .range(["#FFFFFF", "#DAE1EF", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
+
+
+
+svg.append("text")
+        .attr("x", (width / 1.28))             
+        .attr("y", 0 - (margin.top / 2.3))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "20px")
+        .style("stroke","black")
+        .style("text-decoration", "underline")  
+        .text("Choropleth of Texas Executionees");
+
+svg.append("text")
+        .attr("x", (width / 1.28))             
+        .attr("y", 0 - (margin.top / 15))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "20px")
+        .style("stroke","black")
+        .style("text-decoration", "underline")  
+        .text("crime conviction county");
+
+
+column(color);
+
+function column(scale) {
+  var legend = d3.legendColor()
+    .labels(["0 ", "1 or more",
+        "5 or more", "10 or more", "40 or more", "100 or more"])
+    .cells(10)
+    .scale(scale);
+
+  var div = d3.select("svg").append("g")
+    .attr("class", "column");
+
+
+
+    
+  var svg = div.append("svg");
+
+  svg.append("g")
+    .attr("class", "legendQuant")
+    .attr("transform", "translate(25, 50)");
+
+  svg.append("text")
+        .attr("transform", "translate(80, 40)")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px")
+        .style("stroke","black")
+        .style("text-decoration", "underline")  
+        .text("# of executionees");
+  
+   
+
+  svg.select(".legendQuant")
+    .call(legend);
+}
+    
+    
+
+
+function ready(error, data, location){
+    console.log(data)
+    
+    var countByCounty = {}; // Create empty object for holding dataset
+    location.forEach(function(d) {
+        countByCounty[d.CNTY_NM] = +d.count; // Create property for each ID, give it value from rate
+        
+    });
+    console.log(countByCounty)
+
+    
+    
+    var counties = topojson.feature(data,data.objects.Texas_County_Boundaries_Detailed).features
+    console.log(counties)
+    
+    svg.selectAll(".county")
+    .data(counties)
+    .enter().append("path")
+    .attr("class", "county")
+    .attr("d", path)
+  
+       
+    .style("fill", function(d) {
+		return color(countByCounty[d.properties.CNTY_NM]) // get rate value for property matching data ID
+        
+		// pass rate value to color function, return color based on domain and range
+        
+    
+	})   
+    
+    
+      
+    
+    .on("mouseover", function(d) {    
+            tooltip.transition()    
+            .duration(200)
+            .style("background-color", 'black')
+            .style("color",'white')
+            .style("opacity", .9);
+            if(countByCounty[d.properties.CNTY_NM] == null){
+                countByCounty[d.properties.CNTY_NM] = 0;
+            }
+            tooltip.html(d.properties.CNTY_NM + " " + countByCounty[d.properties.CNTY_NM]) 
+            .style("width", '85px')
+            .style("left", (d3.event.pageX) + "px")   
+            .style("top", (d3.event.pageY - 28) + "px");
+            
+            d3.select(this)
+            .style("fill", "yellow");
+     
+          })          
+    .on("mouseout", function(d) {   
+       tooltip.transition()    
+      .duration(500)    
+      .style("opacity", 0);
+      
+      d3.select(this)
+      .style("fill", function(d) {
+		if(countByCounty[d.properties.CNTY_NM] == 0){
+                return color(-1);
+            }
+          else
+         return color(countByCounty[d.properties.CNTY_NM])
+    })
+      })
+    
+ 
+    
+    
+ 
+    
+    
+    
+}
+
+
+</script>
